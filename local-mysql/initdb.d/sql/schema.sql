@@ -1,0 +1,6 @@
+CREATE TABLE `db_example`.`users` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(255) NOT NULL,
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) DEFAULT CHARSET = utf8 COLLATE = utf8_bin;

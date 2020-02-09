@@ -1,0 +1,18 @@
+version: '3.2'
+
+# https://hub.docker.com/_/microsoft-mssql-server
+# https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-configure-docker?view=sql-server-ver15#persist
+
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+    restart: always
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: ${SA_PASSWORD}   # from env var
+      TZ: Asia/Tokyo
+    ports:
+      - 1433:1433
+    volumes:
+      - ./shared-data:/shared-data
+      # - mssqlvolume:/var/opt/mssql
