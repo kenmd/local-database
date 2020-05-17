@@ -27,6 +27,14 @@ docker-compose exec mssql bash
 * To change port, `ports` in `docker-compose.yml` e.g. `11433:1433`
 * then connect to `127.0.0.1,11433` (Note to use "," instead of ":")
 
+### Custom project name
+
+* default project name is its directory name
+* 2 ways to set the name to start from directory of same name
+  - `export COMPOSE_PROJECT_NAME=local-mssql2017-dev`
+  - `docker-compose --project-name local-mssql2017-dev ps`
+* container name use the project name (or set `container_name`)
+
 
 ## Connect
 
